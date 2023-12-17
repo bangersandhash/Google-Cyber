@@ -1,0 +1,91 @@
+###Find index in a string.
+
+ip_addresses = "192.168.140.81, 192.168.109.50, 192.168.243.140"
+start_index = ip_addresses.find("192.168.243.140")
+
+print("Starting index:", start_index)
+ 
+change a list
+
+username_list = ["elarson", "fgarcia", "tshah", "sgilmore"]
+print("Before changing an element:", username_list)
+username_list[1] = "bmoreno"
+print("After changing an element:", username_list)
+
+insert into a list
+
+username_list = ["elarson", "bmoreno", "tshah", "sgilmore"]
+print("Before inserting an element:", username_list)
+username_list.insert(2,"wjaffrey")
+print("After inserting an element:", username_list)
+
+remove
+
+username_list = ["elarson", "bmoreno", "wjaffrey", "tshah", "sgilmore"]
+print("Before removing an element:", username_list)
+username_list.remove("elarson")
+print("After removing an element:", username_list)
+
+
+append numbers into a list through a for loop.
+                                    
+numbers_list = []
+print("Before appending a sequence of numbers:", numbers_list)
+for i in range(10):
+    numbers_list.append(i)
+print("After appending a sequence of numbers:", numbers_list)
+
+
+
+# Assign `approved_users` to a list of approved usernames
+
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+
+username = "sgilmore"
+
+if username in approved_users:
+    print("The user", username, "is approved to access the system.")
+else:
+    print("The user", username, "is not approved to access the system.")
+
+Write a login automation:
+
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Define a function named `login` that takes in two parameters, `username` and `device_id`
+def login(username, device_id):
+    # If `username` belongs to `approved_users`,
+    if username in approved_users:
+        # then display "The user ______ is approved to access the system.",
+        print("The user", username, "is approved to access the system.")
+        # assign `ind` to the index of `username` in `approved_users`,
+        ind = approved_users.index(username)
+        # and execute the following conditional
+        # If `device_id` matches the element at the index `ind` in `approved_devices`,
+        if device_id == approved_devices[ind]:
+            # then display "______ is the assigned device for ______"
+            print(device_id, "is the assigned device for", username)
+        # Otherwise,
+        else:
+            # display "______ is not their assigned device"
+            print(device_id, "is not their assigned device.")
+    # Otherwise (part of the outer conditional and handles the case when `username` does not belong to `approved_users`),
+    else:
+        # Display "The user ______ is not approved to access the system."
+        print("The username", username, "is not approved to access the system.")
+
+# Call the function you just defined to experiment with different username and device_id combinations
+# Replace these values with different username and device_id combinations
+login("sgilmore", "4n482ts")
+login("bmoreno", "a307vir")
+###
